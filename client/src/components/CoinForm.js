@@ -1,11 +1,8 @@
-import React from  'react'
+import React from 'react'
 import { Form } from 'semantic-ui-react'
 import { connect } from 'react-redux'
-import { addCoin }from '../reducers/coins'
+import { addCoin } from '../reducers/coins'
 
-
-
-//coinform is a class becuase it will have state
 class CoinForm extends React.Component {
   state = { coin: '' }
 
@@ -15,22 +12,22 @@ class CoinForm extends React.Component {
   }
 
   handleSubmit = (e) => {
-    e.preventDefailt()
-    const { dispatch } = this.props
+    e.preventDefault()
+    const { dispatch, resetForm } = this.props
     const { coin } = this.state
     dispatch(addCoin(coin))
-    this.setState({ coin: '' })
+    resetForm()
   }
 
   render() {
-    return(
+    return (
       <Form onSubmit={this.handleSubmit}>
         <Form.Input
-        label="Watch Coin"
-        value={this.state.coin}
-        onChange={this.handleChange}
-        name="coin"
-        required
+          label="Watch Coin"
+          value={this.state.coin}
+          onChange={this.handleChange}
+          name="coin"
+          required
         />
         <Form.Button>Add Coin</Form.Button>
       </Form>
@@ -38,6 +35,4 @@ class CoinForm extends React.Component {
   }
 }
 
-export default connect() (CoinForm)
-
-
+export default connect()(CoinForm)

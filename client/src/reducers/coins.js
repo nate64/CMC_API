@@ -25,15 +25,18 @@ export const removeCoin = (id) => {
   }
 }
 
-export default ( state = [], action) => {
+export default ( state = [], action ) => {
   switch(action.type) {
     case COINS:
+      // { type: COINS, coins: [{},{}] }
       return action.coins
     case ADD_COIN:
-      return [ ...state, action.coin ]
+      // { type: ADD_COIN, coin: {} }
+      return [...state, action.coin]
     case REMOVE_COIN:
+      // { type: REMOVE_COIN, id: 7 }
       return state.filter( c => c.id !== action.id )
-    default:
+    default: 
       return state
   }
 }

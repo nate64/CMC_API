@@ -9,9 +9,9 @@ import { getCoins } from '../reducers/coins'
 
 class CoinList extends React.Component {
   componentDidMount() {
-    const { dispatch } =this.props
+    const { dispatch } = this.props
     dispatch(getCoins())
-    this.interval = setInterval( () => dispatch(getCoins()), 60000) 
+    this.interval = setInterval( () => dispatch(getCoins()), 60000 )
   }
 
   componentWillUnmount() {
@@ -67,3 +67,4 @@ const mapStateToProps = (state) => {
 
 
 export default connect(mapStateToProps)(CoinList)
+
