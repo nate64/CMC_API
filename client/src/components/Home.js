@@ -15,23 +15,24 @@ class Home extends Component {
 export default Home;
 
 
+//Dave used this as temp code to test and make sure it works:
 
-state = { coin: {} 
-}
+// state = { coin: {} 
+// }
 
-clicky = () => {
-  axios.post('/api/coins?coin=btc')
-    .then( res => { debugger } )
-}
+// clicky = () => {
+//   axios.post('/api/coins?coin=btc')
+//     .then( res => { debugger } )
+// }
 
-clicky2 = () => {
-  axios.get('/api/coins')
-    .then( res => { debugger } ) 
-}
+// clicky2 = () => {
+//   axios.get('/api/coins')
+//     .then( res => { debugger } ) 
+// }
 
-<Button onClick={this.clicky}>
-        Click Me!
-      </Button>
-      <Button onClick={this.clicky2}>
-        Click Me!
-      </Button>
+// <Button onClick={this.clicky}>
+//         Click Me!
+//       </Button>
+//       <Button onClick={this.clicky2}>
+//         Click Me!
+//       </Button>
