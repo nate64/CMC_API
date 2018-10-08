@@ -1,18 +1,36 @@
-import React, { Component } from 'react';
-import { Header, Button } from 'semantic-ui-react';
-import axios from 'axios'
+import React from 'react';
+import CoinForm from './CoinForm'
+import CoinList from './CoinList'
 
+class Home extends React.Component {
+  state = { key: 0 }
 
-class Home extends Component {
+  resetForm = () => {
+    this.setState( state => ({ key: state.key + 1 }) )
+  }
+
   render() {
     return (
       <>
+        <CoinForm key={this.state.key} resetForm={this.resetForm} />
+        <CoinList />
       </>
-    );
+    )
   }
 }
 
 export default Home;
+
+
+
+
+
+
+
+
+
+
+
 
 
 //Dave used this as temp code to test and make sure it works:

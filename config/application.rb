@@ -24,9 +24,11 @@ module CryptoPortfolio
     config.middleware.insert_before 0, Rack::Cors do
       allow do
         origins '*'
-        resource '*'
+        resource '*',
           methods: [:get, :post, :put, :delete],
           expose: ['access-token', 'client', 'uid', 'expiry']
-        end
-        
+      end
+    end
+
+  end
 end
